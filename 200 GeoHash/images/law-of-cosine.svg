@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2017 mathsisfun.com -->
+<svg xmlns="http://www.w3.org/2000/svg" width="219.5" height="131.3" version="1.1" style="font-family:'Comic Sans MS'; font-size:26px; fill:#3465a4; stroke-width:0.5px;">
+<defs/>
+<g transform="translate(1809.61,-1663.81)">
+	<text x="-1768.4" y="1766.9" style="overflow:visible; fill:#013397;">A</text>
+	<text x="-1676.8" y="1711.7" style="overflow:visible; fill:#013397;">C</text>
+	<text x="-1620.4" y="1716.4">a</text>
+	<text x="-1751" y="1714.7">b</text>
+	<text x="-1702.1" y="1794.2">c</text>
+	<path style="fill:#ffff99; stroke:#013397; stroke-width:2.85;" d="m -1780.2,1754.7 a 31.5,31.5 0 0 1 6.4,19.1 l -31.5,0 z"/>
+	<path style="overflow:visible; fill:#ffff99; stroke:#013397; stroke-width:2.85;" d="m -1651.2,1683.4 a 20.8,20.8 0 0 1 -27.9,-4.9 l 16.6,-12.5 z"/>
+	<path style="overflow:visible; fill:#ffff99; stroke:#013397; stroke-width:2.85;" d="m -1615.7,1773.8 a 23,23 0 0 1 10.5,-19.4 l 12.5,19.3 z"/>
+	<path style="color:black; overflow:visible; stroke-width:3;" d="m -1805.4,1772.2 v 3 h 213.9 v -3 z"/>
+	<path style="color:black; overflow:visible; stroke-width:3;" d="m -1661.2,1665.1 -2.5,1.6 69.7,107.9 2.5,-1.6 z"/>
+	<path style="color:black; overflow:visible; stroke-width:3;" d="m -1663.3,1664.7 -144.9,109.2 1.8,2.4 144.9,-109.2 z"/>
+	<text x="-1639.2" y="1765.5" style="fill:#013397;">B</text>
+</g>
+</svg>
