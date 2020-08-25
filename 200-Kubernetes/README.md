@@ -61,3 +61,26 @@ pods을 확인 하고, Postman에서도 확인합니다.
 kubectl get pods
 kubectl port-forward myapp-kube 5000:5000
 ```
+
+## stateful 로 해보기
+
+아래의 두개의 명령이 되어 있어야 합니다. 
+
+```bash
+eval $(minikube docker-env)
+docker build -t myapp .
+```
+
+배포합니다.
+
+```bash
+kubectl apply -f deployment.yaml
+
+kubectl port-forward svc/myapp 5000:80
+```
+
+최종적으로 Minikube로 서비스 포트를 열수 있습니다.
+
+```bash
+minikube service myapp
+```
