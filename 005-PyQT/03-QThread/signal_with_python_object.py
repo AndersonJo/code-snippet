@@ -14,7 +14,7 @@ def producer(que: Queue):
 
 
 class Consumer(QThread):
-    poped = pyqtSignal(str)
+    poped = pyqtSignal('PyQt_PyObject')  # 여기가 중요. PyQt_PyObject 이걸로 해야 함
 
     def __init__(self, que: Queue):
         super().__init__()
@@ -23,7 +23,7 @@ class Consumer(QThread):
     def run(self):
         while True:
             data = self.que.get()
-            self.poped.emit(data)
+            self.poped.emit([1, data])
 
 
 class MyWindow(QMainWindow):
@@ -39,7 +39,7 @@ class MyWindow(QMainWindow):
         self.consumer.start()
         self.cnt = 0
 
-    @pyqtSlot(str)
+    @pyqtSlot('PyQt_PyObject')
     def process_data(self, data):
         self.cnt += 1
         self.statusBar().showMessage(str(self.cnt))
