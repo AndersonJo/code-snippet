@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 def producer(que: Queue):
     data = ''.join([str(np.random.rand()) for _ in range(20)])
     for i in range(100000):
-        que.put(data)
+        que.put(data, block=False)
 
 
 class Consumer(QThread):
