@@ -1,7 +1,7 @@
 Flask==1.1.2
 Keras==2.4.3
 h5py==2.10.0
-tensorflow-cpu==2.4.0
+tensorflow-cpu==2.5.3
 Pillow==7.2.0
 numpy==1.18.5
 opencv-python==4.4.0.42
