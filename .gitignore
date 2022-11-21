@@ -4,3 +4,7 @@
 # Project
 .idea
 .ipynb_checkpoints
+
+# Useless Files
+_SUCCESS
+*.crc
