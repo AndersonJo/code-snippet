@@ -8,3 +8,7 @@
 # Useless Files
 _SUCCESS
 *.crc
+
+# Data
+*.parquet
+*.orc
