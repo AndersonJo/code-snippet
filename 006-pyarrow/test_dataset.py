@@ -65,5 +65,3 @@ def create_data():
             partition_cols=["dt"],
             use_legacy_dataset=False,
         )
-
-# create_data()
