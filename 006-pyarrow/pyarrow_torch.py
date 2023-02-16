@@ -56,6 +56,8 @@ class PyArrowDataset(Dataset):
 
         if self._cur_meta is not None and meta_idx == self._cur_meta[0]:
             start_idx = self._cur_meta[1]
+            # print(f'total: {len(self)} | {idx - start_idx}')
+            assert (idx - start_idx) >= 0, f'{idx} - {start_idx} = {idx - start_idx} <- should not be negative.'
             return self._df.iloc[idx - start_idx]
 
         # Clear memory references

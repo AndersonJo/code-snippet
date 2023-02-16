@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
 from pathlib import Path
+from plistlib import Data
 
 import pandas as pd
 import pyarrow as pa
+from torch.utils.data import DataLoader
 
 from pyarrow_torch import PyArrowDataset
 
@@ -43,6 +45,40 @@ def test_dataset():
 
     assert dataset[8000001] == 8000001
     assert dataset.read_cnt == 8
+
+
+def test_dataloader_batch():
+    dataset = CustomDataset("./data")
+    loader = DataLoader(dataset, batch_size=2)
+    for i, row in enumerate(loader):
+        assert [i * 2, i * 2 + 1] == row.tolist()
+        # assert i == row.item()
+
+    i = 0
+    for i, row in enumerate(loader):
+        assert [i * 2, i * 2 + 1] == row.tolist()
+    assert (i + 1) == len(loader)
+
+
+def test_dataloader_workers():
+    dataset = CustomDataset("./data")
+    loader = DataLoader(dataset, batch_size=2, num_workers=8)
+    for i, row in enumerate(loader):
+        assert [i * 2, i * 2 + 1] == row.tolist()
+
+
+def test_dataloader_random():
+    dataset = CustomDataset("./data")
+    loader = DataLoader(dataset, batch_size=10, shuffle=True, num_workers=2, pin_memory=True)
+    total = set()
+    for i, row in enumerate(loader):
+        total |= set(row.tolist())
+    assert len(total) == len(loader) * 10
+
+    total = set()
+    for i, row in enumerate(loader):
+        total |= set(row.tolist())
+    assert len(total) == len(loader) * 10
 
 
 class CustomDataset(PyArrowDataset):
