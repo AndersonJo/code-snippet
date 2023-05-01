@@ -1,4 +1,4 @@
-Flask==1.1.2
+Flask==2.3.2
 Keras==2.4.3
 h5py==2.10.0
 tensorflow-cpu==2.4.0
